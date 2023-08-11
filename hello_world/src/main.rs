@@ -25,8 +25,17 @@ fn main() {
             gtk::main_quit();
             Inhibit(false)
         });
+        // set default size
+        window.set_default_size(300, 300);
+        // set min size
+        window.set_size_request(300, 300);
+        // set title
+        window.set_title("Hello world application");
+
         let label = builder.object::<Label>("HelloWorldLabel").unwrap();
+        // change label text
         label.set_text("Hello, world.");
+        // show main window
         window.show_all();
         gtk::main();
     }
