@@ -45,15 +45,15 @@ fn build_ui(application: &gtk::Application) {
     message_dialog.set_modal(true);
     let close_button = builder.object::<Button>("CloseButton").expect("Couldn't get CloseButton");
     message_dialog.connect_delete_event(|message_dialog,_| {
-       	message_dialog.hide();
+        message_dialog.hide();
         Inhibit(true)
     });
     close_button.connect_clicked(clone!(@weak message_dialog => move |_| message_dialog.close()));
-	
+    
     ok_button.connect_clicked(clone!(@weak message_dialog => move |_| {
-    	let text = name_entry.text().to_string();
-		message_dialog.set_text(Some(&format!("Hello {}.",text)));
-    	message_dialog.show_all()
+        let text = name_entry.text().to_string();
+        message_dialog.set_text(Some(&format!("Hello {}.",text)));
+        message_dialog.show_all()
     }
     ));
 
