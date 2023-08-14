@@ -41,6 +41,8 @@ fn build_ui(application: &gtk::Application) {
     let ok_button = builder.object::<Button>("OkButton").expect("Couldn't get OkButton");
     let message_dialog = builder.object::<MessageDialog>("MessageDialog").expect("Couldn't get MessageDialog");
     message_dialog.set_title("Message");
+    message_dialog.set_transient_for(Some(&input_dialog));
+    message_dialog.set_modal(true);
     let close_button = builder.object::<Button>("CloseButton").expect("Couldn't get CloseButton");
     message_dialog.connect_delete_event(|message_dialog,_| {
        	message_dialog.hide();
