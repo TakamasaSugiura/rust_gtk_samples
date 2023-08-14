@@ -37,7 +37,7 @@ fn build_ui(application: &gtk::Application) {
     input_dialog.set_size_request(300, 300);
     // set title
     input_dialog.set_title("Input dialog application");
-	let name_entry = builder.object::<Entry>("NameEntry").expect("Couldn't get NameEntry");
+    let name_entry = builder.object::<Entry>("NameEntry").expect("Couldn't get NameEntry");
     let ok_button = builder.object::<Button>("OkButton").expect("Couldn't get OkButton");
     let message_dialog = builder.object::<MessageDialog>("MessageDialog").expect("Couldn't get MessageDialog");
     message_dialog.set_title("Message");
