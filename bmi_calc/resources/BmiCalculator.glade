@@ -42,6 +42,7 @@
               <object class="GtkEntry" id="HeightEntry">
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
+                <property name="max-length">5</property>
               </object>
               <packing>
                 <property name="left-attach">1</property>
@@ -52,6 +53,7 @@
               <object class="GtkEntry" id="WeightEntry">
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
+                <property name="max-length">5</property>
               </object>
               <packing>
                 <property name="left-attach">1</property>
